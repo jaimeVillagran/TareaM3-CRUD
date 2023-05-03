@@ -1,0 +1,23 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "Final proyect bootcamp MERN. To Do APP CRUD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/GabrielRecabarren/TareaM3-CRUD.git"
+  },
+  "author": "GabrielAmaru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielRecabarren/TareaM3-CRUD/issues"
+  },
+  "homepage": "https://github.com/GabrielRecabarren/TareaM3-CRUD#readme",
+  "dependencies": {
+    "express": "4.18.2",
+    "mongoose": "7.1.0"
+  }
+}
