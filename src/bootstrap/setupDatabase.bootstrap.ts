@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { mongo } from 'mongoose';
 import { config } from 'src/config';
 
 
@@ -11,6 +11,10 @@ export default () => {
         .catch((error) => {
             console.log('Error connecting to database', error);
             return process.exit(1);
-        })
+        });
     };
+
+    connect();
+
+    mongoose.connection.on('disconnected', connect);
 };
