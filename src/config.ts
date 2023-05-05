@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import bunyan from 'bunyan';
 
 dotenv.config({});
 
@@ -9,6 +10,7 @@ class Config {
     public JWT_TOKEN: string | undefined;
     public SECRET_KEY_ONE: string | undefined;
     public SECRET_KEY_TWO: string | undefined;
+    public SERVER_PORT: string | number | undefined;
 
     constructor() {
         this.DATABASE_URL = process.env.DATABASE_URL;
@@ -17,7 +19,12 @@ class Config {
         this.JWT_TOKEN = process.env.JWT_TOKEN;
         this.SECRET_KEY_ONE = process.env.SECRET_KEY_ONE;
         this.SECRET_KEY_TWO = process.env.SECRET_KEY_TWO;
+        this.SERVER_PORT = process.env.SERVER_PORT;
     }
+
+    public createLogger(name: string): bunyan{
+        return bunyan.createLogger({name, level:'debug'});
+      }
 
     public validateConfig(): void {
         console.log(this);
