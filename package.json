@@ -10,7 +10,7 @@
     "prettier:check": "prettier --check src/**/*.{ts,json}",
     "prettier:fix": "prettier --write src/**/*.{ts,json}",
     "test": "jest --coverage=true -w=1 --forceExit --detectOpenHandles --watchAll=false",
-    "build": "ttsc -p ."
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -75,7 +75,7 @@
     "ts-node": "10.9.1",
     "tsc-alias": "1.8.3",
     "tsconfig-paths": "4.1.2",
-    "ttypescript": "1.5.15",
+
     "typescript": "5.0.4",
     "typescript-transform-paths": "3.4.6"
   }

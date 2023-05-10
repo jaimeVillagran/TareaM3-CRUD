@@ -8,9 +8,8 @@ class Application {
         this.loadConfig();
         databaseConnection();
         const app: Express = express();
-        const server : ToDoServer = new ToDoServer(app);
+        const server: ToDoServer = new ToDoServer(app);
         server.start();
-
     }
 
     private loadConfig(): void {
