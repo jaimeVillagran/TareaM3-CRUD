@@ -1,7 +1,7 @@
 import express, { Express } from 'express';
 import { ToDoServer } from '@bootstrap/setupServer.bootstrap';
 import databaseConnection from './bootstrap/setupDatabase.bootstrap';
-import { config } from './config';
+import { config } from './configs/configEnvs';
 
 class Application {
     public initialize(): void {

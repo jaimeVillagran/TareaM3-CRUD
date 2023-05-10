@@ -7,9 +7,10 @@ import compression from 'compression';
 import cookieSession from 'cookie-session';
 import Logger from 'bunyan';
 import 'express-async-errors';
-import { config } from '../config';
+import { config } from '@configs/configEnvs';
+import { logger } from '@configs/configLogs';
 
-const log : Logger = config.createLogger('server');
+const log : Logger = logger.createLogger('server');
 
 
 export class ToDoServer {
@@ -68,7 +69,7 @@ export class ToDoServer {
     }
     //Programar el server
     private startHttpServer(httpServer: http.Server): void {
-        log.info(`Server has started with procces ${process.pid}`);
+        log.info(`Server has started with procces ${process.pid}.`);
         httpServer.listen(config.SERVER_PORT, ()=> {
             log.info(`Server running at ${config.SERVER_PORT}.`);
         });

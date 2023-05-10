@@ -18,11 +18,11 @@
         "pretty": true,
         "noUnusedLocals": false,
         "noUnusedParameters": false,
-        "plugins": [
-            { "transform": "typescript-transform-paths" },
-            { "transform": "typescript-transform-paths", "afterDeclarations": true }
+        "plugins": [//plugins para transformacion de alias paths
+            { "transform": "typescript-transform-paths" },//conexion con el transformador
+            { "transform": "typescript-transform-paths", "afterDeclarations": true }//Establece que su definicion persista luego de la compilación
         ],
-        "paths": {
+        "paths": {//configuración de Alias Paths
             "@bootstrap/*": ["src/bootstrap/*"],
             "@configs/*": ["src/configs/*"],
             "@auth/*": ["src/features/auth/*"],
@@ -31,7 +31,6 @@
             "@decorators/*": ["src/shared/globals/decorators/*"],
             "@helpers/*": ["src/shared/globals/helpers/*"],
             "@services/*": ["src/shared/globals/services/*"],
-            "@workers/*": ["src/shared/globals/workers/*"],
             "@root/*": ["src/*"]
         }
     },
