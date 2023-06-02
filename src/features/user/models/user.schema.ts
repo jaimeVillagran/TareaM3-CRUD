@@ -1,4 +1,4 @@
-import { IUserDocument } from '@user/interfaces/IUserDocument.interface';
+import { IUserDocument } from '@root/features/user/interfaces/IUserDocument.interface';
 
 import { model, Model, Schema } from 'mongoose';
 

@@ -15,6 +15,7 @@ import { config } from '@configs/configEnvs';
 import { logger } from '@configs/configLogs';
 import { IErrorResponse } from '../shared/globals/helpers/error/errorResponse.interface';
 import { CustomError } from '@helpers/error/customError';
+import ApplicationRoutes from '@interfaces/http/routes';
 
 const log: Logger = logger.createLogger('server');
 
@@ -30,6 +31,7 @@ export class ToDoServer {
   public start(): void {
     this.securityMIddleware(this.app);
     this.standardWiddleware(this.app);
+    this.routesMiddleware(this.app);
     this.globalErrorHandler(this.app);
     this.startServer(this.app);
   }
@@ -78,9 +80,9 @@ export class ToDoServer {
   private async startServer(app: Application): Promise<void> {
     try {
       const httpServer: http.Server = new http.Server(app);
-      const socketIO: Server = await this.createSocketIO(httpServer);
+
       this.startHttpServer(httpServer);
-      this.socketIOConnections(socketIO); //Para ver si está activo
+
     } catch (error) {
       log.error(error);
     }
@@ -92,22 +94,11 @@ export class ToDoServer {
       log.info(`Server running at ${config.SERVER_PORT}.`);
     });
   }
-  //Servidor de Socket
-  private async createSocketIO(httpServer: http.Server): Promise<Server> {
-    const io: Server = new Server(httpServer, {
-      cors: {
-        origin: config.CLIENT_URL,
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
-      }
-    });
-    const pubClient = createClient({ url: config.REDIS_HOST });
-    const subClient = pubClient.duplicate();
-    await Promise.all([pubClient.connect(), subClient.connect()]);
-    io.adapter(createAdapter(pubClient, subClient));
-    return io;
+//Manejo de rutas
+  private routesMiddleware(app: Application): void{
+    ApplicationRoutes(app);
   }
 
-  private socketIOConnections(io: Server): void {
-    log.info('SocketIO Connections Ok.');
-  }
+
+
 }
