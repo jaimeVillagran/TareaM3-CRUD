@@ -1,4 +1,5 @@
 import mongoose, { Document, ObjectId } from 'mongoose';
+import { INotificationsSettings } from './INotificationsSettings';
 
 export interface IUserDocument extends Document {
     _id: string | ObjectId;
@@ -13,7 +14,4 @@ export interface IUserDocument extends Document {
     passwordResetExpires?: number | string;
 }
 
-export interface INotificationsSettings {
-    massages: boolean;
-    comments: boolean
-}
+
