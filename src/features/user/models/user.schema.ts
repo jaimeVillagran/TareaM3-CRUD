@@ -3,7 +3,9 @@ import { IUserDocument } from '@root/features/user/interfaces/IUserDocument.inte
 import { model, Model, Schema } from 'mongoose';
 
 const userSchema: Schema = new Schema({
-  username: { type: String, default: '' }
+  username: { type: String, default: '' },
+  email: {type:String, default: ''},
+  password:{type:String, default: ''}
 });
 
 const UserModel: Model<IUserDocument> = model<IUserDocument>('User', userSchema, 'User');
