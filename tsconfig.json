@@ -25,7 +25,7 @@
         "paths": {//configuración de Alias Paths
             "@bootstrap/*": ["src/bootstrap/*"],
             "@configs/*": ["src/configs/*"],
-            "@auth/*": ["src/features/user/*"],
+            "@auth/*": ["src/features/auth/*"],
             "@user/*": ["src/features/user/*"],
             "@interfaces/*": ["src/interfaces/*"],
             "@decorators/*": ["src/shared/globals/decorators/*"],

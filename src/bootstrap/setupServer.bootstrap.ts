@@ -27,7 +27,7 @@ export class ToDoServer {
   }
 
   //Comportamientos y definiciones propias del server, inyecciones.
-
+//Patron de diseño Chain of Responsability
   public start(): void {
     this.securityMIddleware(this.app);
     this.standardWiddleware(this.app);
