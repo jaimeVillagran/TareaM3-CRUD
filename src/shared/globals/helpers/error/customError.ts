@@ -1,6 +1,7 @@
 import { IError } from './error.interface';
-//Principio Solid :Responsabilidad Unica --> Separar los helpers de errores cada uno con su propio contexto.
-
+//Solid Single Responsability--> Each helper for each context
+//Design Pattern Facade: An abstract class to be implemented for each context.
+//Design Patern Singleton: Only one instance to use for global access.
 export abstract class CustomError extends Error {
   abstract statusCode: number;
   abstract status: string;

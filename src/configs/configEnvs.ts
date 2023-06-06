@@ -15,6 +15,7 @@ class Config {
   public CLOUD_NAME: string | undefined;
   public API_KEY: string | undefined;
   public API_SECRET: string | undefined;
+  public SALT_ROUND: string | undefined;
 
   constructor() {
     this.DATABASE_URL = process.env.DATABASE_URL;
@@ -28,6 +29,7 @@ class Config {
     this.CLOUD_NAME = process.env.CLOUD_NAME;
     this.API_KEY = process.env.API_KEY;
     this.API_SECRET = process.env.API_SECRET;
+    this.SALT_ROUND = process.env.SALT_ROUND;
   }
 
   public createLogger(name: string): bunyan {

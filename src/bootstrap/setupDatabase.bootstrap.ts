@@ -5,6 +5,7 @@ import { logger } from '@configs/configLogs';
 
 const log: Logger = logger.createLogger('setupDatabase');
 
+//Design Pattern: Singleton.
 export default () => {
   const connect = () => {
     mongoose

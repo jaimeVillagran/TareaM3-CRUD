@@ -35,12 +35,13 @@ export class ToDoServer {
     this.globalErrorHandler(this.app);
     this.startServer(this.app);
   }
-  //Definiciones de seguridad
+
+  //Desing Pattern: Sicronizer Token Pattern
   private securityMIddleware(app: Application): void {
     app.use(
       cookieSession({
         name: 'session', //Nombre de la cookie
-        keys: [config.SECRET_KEY_ONE!, config.SECRET_KEY_TWO!], //Credenciales de cookie
+        keys: [config.SECRET_KEY_ONE!, config.SECRET_KEY_TWO!], //Credenciales de cookies. Primer bloque de seguridad.
         maxAge: 24 * 7 * 3600000, //Tiempo de vida de la cookie
         secure: config.NODE_ENV !== 'development' //en qué contexto va a trabajar. Esta definición nos permite no pasarle el certificado que se usará en producción.
       })
