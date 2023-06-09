@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction} from 'express';
 import  JWT  from 'jsonwebtoken';
 import { config } from '@configs/configEnvs';
-import { NotAuthorizedError } from '@helpers/error/noAuthorizedError';
-import { AuthPayload } from '@auth/interfaces/auth.interface';
+import { NotAuthorizedError } from '@helpers/errors/noAuthorizedError';
+import { AuthPayload } from '@auth/interfaces/IAuthPayload.interface';
 
 export class AuthMiddleware {
-    public verifyUser(req: Request, res: Response, next: NextFunction): void{
+    public verifyUser(req: Request, _res: Response, next: NextFunction): void{
         if(!req.session?.jwt){
             throw new NotAuthorizedError('Token is not available. Please try again');
         }
@@ -17,7 +17,7 @@ export class AuthMiddleware {
         }
         next();
     }
-    public checkAuthentication(req: Request, res: Response, next: NextFunction){
+    public checkAuthentication(req: Request, _res: Response, next: NextFunction){
         if(!req.currentUser){
             throw new NotAuthorizedError('Authentication is required to acces this route.');
         }

@@ -1,0 +1,59 @@
+@baseUrl = http://localhost:5000
+@urlPath = api/v1
+
+###
+POST {{baseUrl}}/{{urlPath}}/signup
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "username": "pepito45",
+  "password": "parcelasasassaasa",
+  "email": "mas@gmail.com",
+  "avatarColor": "black",
+}
+
+###
+POST {{baseUrl}}/{{urlPath}}/signin
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "username": "pepito19",
+  "password": "mario"
+}
+
+###
+GET {{baseUrl}}/{{urlPath}}/currentUser
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+GET {{baseUrl}}/{{urlPath}}/signout
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+POST {{baseUrl}}/{{urlPath}}/forgot-password
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "email": "mchamorro14@escalab.tech"
+}
+
+###
+POST {{baseUrl}}/{{urlPath}}/reset-password/dbaa6bbc46a652e2f950abfe1bbadc438f499a0e
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "password": "mario",
+  "confirmPassword": "mario"
+}

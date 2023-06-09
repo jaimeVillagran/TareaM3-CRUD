@@ -13,8 +13,8 @@ import { createAdapter } from '@socket.io/redis-adapter';
 import { createClient } from 'redis';
 import { config } from '@configs/configEnvs';
 import { logger } from '@configs/configLogs';
-import { IErrorResponse } from '../shared/globals/helpers/error/errorResponse.interface';
-import { CustomError } from '@helpers/error/customError';
+import { IErrorResponse } from '../shared/globals/helpers/errors/errorResponse.interface';
+import { CustomError } from '@helpers/errors/customError';
 import ApplicationRoutes from '@interfaces/http/routes';
 
 const log: Logger = logger.createLogger('server');

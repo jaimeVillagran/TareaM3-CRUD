@@ -1,4 +1,4 @@
-import { JoiRequestValidationError } from '@helpers/error/joiValidationError';
+import { JoiRequestValidationError } from '@helpers/errors/joiValidationError';
 import { Request } from 'express';
 import { ObjectSchema} from 'joi';
 
