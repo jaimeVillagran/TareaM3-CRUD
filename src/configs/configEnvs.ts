@@ -11,10 +11,6 @@ class Config {
   public SECRET_KEY_ONE: string | undefined;
   public SECRET_KEY_TWO: string | undefined;
   public SERVER_PORT: string | number | undefined;
-  public REDIS_HOST: string | undefined;
-  public CLOUD_NAME: string | undefined;
-  public API_KEY: string | undefined;
-  public API_SECRET: string | undefined;
   public SALT_ROUND: string | undefined;
   public BASE_PATH: string | undefined;
   public RANDOM_BYTES: string | undefined;
@@ -28,10 +24,6 @@ class Config {
     this.SECRET_KEY_ONE = process.env.SECRET_KEY_ONE;
     this.SECRET_KEY_TWO = process.env.SECRET_KEY_TWO;
     this.SERVER_PORT = process.env.SERVER_PORT;
-    this.REDIS_HOST = process.env.REDIS_HOST;
-    this.CLOUD_NAME = process.env.CLOUD_NAME;
-    this.API_KEY = process.env.API_KEY;
-    this.API_SECRET = process.env.API_SECRET;
     this.SALT_ROUND = process.env.SALT_ROUND;
     this.BASE_PATH=process.env.BASE_PATH;
     this.RANDOM_BYTES=process.env.RANDOM_BYTES;

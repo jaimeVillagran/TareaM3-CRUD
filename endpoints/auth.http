@@ -8,10 +8,10 @@ Accept: application/json
 withCredentials: true
 
 {
-  "username": "pepito45",
-  "password": "parcelasasassaasa",
-  "email": "mas@gmail.com",
-  "avatarColor": "black",
+  "username": "gabriel",
+  "password": "gabdev",
+  "email": "gabriel.recabarren@gmail.com",
+  "avatarColor": "black"
 }
 
 ###
@@ -21,8 +21,8 @@ Accept: application/json
 withCredentials: true
 
 {
-  "username": "pepito19",
-  "password": "mario"
+  "username": "gabriel",
+  "password": "gabdev"
 }
 
 ###
