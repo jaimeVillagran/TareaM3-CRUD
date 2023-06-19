@@ -35,4 +35,3 @@ const taskSchema = new Schema<TaskDocument>({
 // se puede utilizar para crear, leer, actualizar y eliminar documentos de tarea de una base de datos MongoDB.
 //
 export default model<TaskDocument>('Task', taskSchema);
-
