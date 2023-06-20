@@ -6,7 +6,7 @@ import { IUserDocument } from '@root/features/user/interfaces/IUserDocument.inte
 export class SignUp {
 
   public async create(req: Request, res: Response): Promise<void> {
-    const { username } = req.body;
+    const user = req.body;
 
 
 
