@@ -1,6 +1,8 @@
 @baseUrl = http://localhost:5000
 @urlPath = api/v1
 
+
+//contiene las solicitudes de registro de usuario
 ###
 POST {{baseUrl}}/{{urlPath}}/signup
 Content-Type: application/json
@@ -14,6 +16,7 @@ withCredentials: true
   "avatarColor": "black"
 }
 
+//contiene las solicitudes de inicio de session
 ###
 POST {{baseUrl}}/{{urlPath}}/signin
 Content-Type: application/json
@@ -25,35 +28,40 @@ withCredentials: true
   "password": "gabdev"
 }
 
+
+//contiene las solicitudes obtener informacion del usuario actual
 ###
 GET {{baseUrl}}/{{urlPath}}/currentUser
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
+//contiene las solicitudes de cierre de sesión
 ###
 GET {{baseUrl}}/{{urlPath}}/signout
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
+//*
 ###
-POST {{baseUrl}}/{{urlPath}}/forgot-password
-Content-Type: application/json
-Accept: application/json
-withCredentials: true
+//POST {{baseUrl}}/{{urlPath}}/forgot-password
+//Content-Type: application/json
+//Accept: application/json
+//withCredentials: true
 
-{
-  "email": "mchamorro14@escalab.tech"
-}
+//*{
+//  "email": "mchamorro14@escalab.tech"
+//}
 
 ###
-POST {{baseUrl}}/{{urlPath}}/reset-password/dbaa6bbc46a652e2f950abfe1bbadc438f499a0e
-Content-Type: application/json
-Accept: application/json
-withCredentials: true
+//POST {{baseUrl}}/{{urlPath}}/reset-password/dbaa6bbc46a652e2f950abfe1bbadc438f499a0e
+//Content-Type: application/json
+//Accept: application/json
+//withCredentials: true
 
-{
-  "password": "mario",
-  "confirmPassword": "mario"
-}
+//{
+//  "password": "mario",
+//  "confirmPassword": "mario"
+//}
+//*/
