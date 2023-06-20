@@ -1,32 +1,29 @@
 import express, { Router } from 'express';
 import { SignIn } from '@auth/controllers/signin';
 import { SignUp } from '@auth/controllers/signup';
-import { Password } from '@auth/controllers/password';
 import { SignOut } from '@auth/controllers/signout';
 
 
 class AuthRoutes {
-  private router: Router;
+    private router: Router;
 
-  constructor() {
-    this.router = express.Router();
-  }
+    constructor() {
+        this.router = express.Router();
+    }
 
-  public routes(): Router {
+    public routes(): Router {
 
-    this.router.post('/signup', SignUp.prototype.create);
-    this.router.post('/signin', SignIn.prototype.read);
-    this.router.post('/forgot-password', Password.prototype.create);
-    this.router.post('/reset-password/:token', Password.prototype.update);
+        this.router.post('/signup', SignUp.prototype.create);
+        this.router.post('/signin', SignIn.prototype.read);
 
-    return this.router;
-  }
+        return this.router;
+    }
 
-  public signoutRoute(): Router {
-    this.router.get('/signout', SignOut.prototype.update);
+    public signoutRoute(): Router {
+        this.router.get('/signout', SignOut.prototype.update);
 
-    return this.router;
-  }
+        return this.router;
+    }
 }
 
 export const authRoutes: AuthRoutes = new AuthRoutes();
