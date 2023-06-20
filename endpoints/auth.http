@@ -43,3 +43,16 @@ Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
+//Solicitud de creacion de task
+###
+POST {{baseUrl}}/{{urlPath}}/createTask
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+{
+    "title":"Tarea1",
+    "description":"Descripcion 1",
+    "dueDate":"2023-05-18T14:0",
+    "completed": false
+
+}

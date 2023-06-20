@@ -3,7 +3,8 @@ import { taskService } from '@services/db/task.service';
 import HTTP_STATUS from 'http-status-codes';
 import { BadRequestError } from '@helpers/errors/badRequestError';
 import { NotFoundError } from '@helpers/errors/notFoundError';
-
+import { joiValidation } from '@decorators/joi-validation.decorator';
+import taskValidator from '@task/schemes/taskValidator';
 export class TaskController {
 
     public async getAllTasks(_req: Request, res: Response): Promise<void> {
