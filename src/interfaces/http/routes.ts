@@ -1,7 +1,7 @@
 //Rutas padres
-import { Request, Response } from 'express';
-import { Application } from 'express';
+import { Application, Request, Response } from 'express';
 import { authRoutes } from '@auth/routes/IAuthRoutes';
+import { taskRoutes } from '@tasks/routes/ITaskRoutes';
 import { authMiddleware } from '@helpers/middlewares/auth-middleware';
 import { config } from '@configs/configEnvs';
 
@@ -13,6 +13,7 @@ export default (app: Application) => {
         app.use(config.BASE_PATH!, authRoutes.routes());
         app.use(config.BASE_PATH!, authRoutes.signoutRoute());
         app.use(config.BASE_PATH!, authMiddleware.verifyUser);//borré esto:currentUserRoutes.routes()
+        app.use(config.BASE_PATH!, taskRoutes.routes());
     };
 
     routes();

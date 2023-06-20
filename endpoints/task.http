@@ -1,0 +1,25 @@
+import express, { Router } from 'express';
+import { CreateTodo } from '@todo/controllers/createTodo';
+import { DeleteTodo } from '@todo/controllers/deleteTodo';
+import { GetTodo } from '@todo/controllers/getTodo';
+import { UpdateTodo } from '@todo/controllers/updateTodo';
+
+class TaskRoutes {
+  private router: Router;
+
+  constructor() {
+    this.router = express.Router();
+  }
+
+  public routes(): Router {
+    this.router.post('/', CreateTodo.prototype.create);
+    this.router.get('/', GetTodo.prototype.readAll);
+    this.router.get('/:id', GetTodo.prototype.readById);
+    this.router.put('/:id', UpdateTodo.prototype.update);
+    this.router.delete('/:id', DeleteTodo.prototype.delete);
+
+    return this.router;
+  }
+}
+
+export const taskRoutes: TaskRoutes = new TaskRoutes();
