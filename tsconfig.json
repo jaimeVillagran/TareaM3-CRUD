@@ -27,6 +27,7 @@
             "@configs/*": ["src/configs/*"],
             "@auth/*": ["src/features/auth/*"],
             "@user/*": ["src/features/user/*"],
+            "@task/*": ["src/features/task/*"],
             "@interfaces/*": ["src/interfaces/*"],
             "@decorators/*": ["src/shared/globals/decorators/*"],
             "@helpers/*": ["src/shared/globals/helpers/*"],
