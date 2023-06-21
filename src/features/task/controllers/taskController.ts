@@ -4,9 +4,21 @@ import HTTP_STATUS from 'http-status-codes';
 import { BadRequestError } from '@helpers/errors/badRequestError';
 import { NotFoundError } from '@helpers/errors/notFoundError';
 import { joiValidation } from '@decorators/joi-validation.decorator';
-import taskValidator from '@task/schemes/taskValidator';
+import { taskValidator } from '@task/schemes/taskSchemes';
 export class TaskController {
+    @joiValidation(taskValidator)
+    public async createTask(req: Request, res: Response): Promise<void> {
+        try {
+            const {newTask} = req.body;
+            await taskService.createTask(newTask);
 
+            res
+                .status(HTTP_STATUS.CREATED)
+                .json({ message: 'Task created', task: newTask });
+        } catch (error) {
+            throw new BadRequestError('Error creating the task. Try again.')
+        }
+    }
     public async getAllTasks(_req: Request, res: Response): Promise<void> {
         res
             .status(HTTP_STATUS.BAD_REQUEST)
@@ -24,18 +36,6 @@ export class TaskController {
         }
     }
 
-    public async createTask(req: Request, res: Response): Promise<void> {
-        try {
-            const newTask = req.body;
-            await taskService.createTask(newTask);
-
-            res
-                .status(HTTP_STATUS.CREATED)
-                .json({ message: 'Task created', task: newTask });
-        } catch (error) {
-            throw new BadRequestError('Error creating the task. Try again.')
-        }
-    }
 
     public async getTaskById(req: Request, res: Response): Promise<void> {
         try {
