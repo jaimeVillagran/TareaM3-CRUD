@@ -5,7 +5,7 @@ import { AuthPayload } from "@auth/interfaces/IAuthPayload.interface";
 import { IAuthDocument } from "@auth/interfaces/IAuthDocument.interface";
 
 //MOCK1: REQUEST
-export const authMockRequest= (sessionData: IJWT, body: IAuthMock, currentUser?: AuthPayload | null, params?: unknown) => ({
+export const authMockRequest = (sessionData: IJWT, body: IAuthMock, currentUser?: AuthPayload | null, params?: unknown) => ({
     session: sessionData,
     body,
     currentUser,
@@ -14,7 +14,7 @@ export const authMockRequest= (sessionData: IJWT, body: IAuthMock, currentUser?:
 });
 
 //MOCK2 : RESPONSE
-export const authMockResponse = () =>{
+export const authMockResponse = () => {
     const res: Response = {} as Response;
     res.status = jest.fn().mockReturnValue(res);
     res.json = jest.fn().mockReturnValue(res);
@@ -27,15 +27,16 @@ export interface IJWT {
 export interface IAuthMock {
     _id?: string;
     username?: string;
+    email?: string;
     password?: string;
-    avatarColor?:string;
+    avatarColor?: string;
     createdAt?: Date | string;
 }
 
 
 //MOCK VALUES
-export const authUserPayload  ={
-    userId:'',
+export const authUserPayload = {
+    userId: '',
     username: 'gabriel',
     email: 'gab.dev@gmail.com',
     avatarColor: 'black',
@@ -43,10 +44,10 @@ export const authUserPayload  ={
 }
 
 export const authMock = {
-    id:'',
+    id: '',
     username: 'gabriel',
     email: 'gab.dev@gmail.com',
     avatarColor: 'black',
     createdAt: new Date(),
-    save: () => {}
+    save: () => { }
 } as IAuthDocument;
