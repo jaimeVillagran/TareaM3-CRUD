@@ -10,10 +10,10 @@ Accept: application/json
 withCredentials: true
 
 {
-  "username": "gabriel",
-  "password": "gabdev",
-  "email": "gabriel.recabarren@gmail.com",
-  "avatarColor": "black"
+  "username": "jaime",
+  "password": "jaimev",
+  "email": "jaime@gmail.com",
+  "avatarColor": "blue"
 }
 
 //contiene las solicitudes de inicio de session
