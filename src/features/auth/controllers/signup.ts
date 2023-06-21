@@ -39,6 +39,7 @@ export class SignUp extends SignUpUtility {
 
         const user: IUserDocument = SignUp.prototype.userData(authData, userObjectId);
         await userService.addUserData(user);
+        await authService.createAuthUser(authData);
 
         res
             .status(HTTP_STATUS.CREATED)
