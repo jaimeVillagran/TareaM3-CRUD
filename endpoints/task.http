@@ -1,25 +1,33 @@
-import express, { Router } from 'express';
-import { CreateTodo } from '@todo/controllers/createTodo';
-import { DeleteTodo } from '@todo/controllers/deleteTodo';
-import { GetTodo } from '@todo/controllers/getTodo';
-import { UpdateTodo } from '@todo/controllers/updateTodo';
+//Solicitud de creacion de task
+@baseUrl = http://localhost:5000
+@urlPath = api/v1
 
-class TaskRoutes {
-  private router: Router;
+###
+POST {{baseUrl}}/{{urlPath}}/createTask
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+{
+    "title":"Tarea1",
+    "description":"Descripcion 1",
+    "dueDate":"2023-05-18T14:0",
+    "completed": false
 
-  constructor() {
-    this.router = express.Router();
-  }
-
-  public routes(): Router {
-    this.router.post('/', CreateTodo.prototype.create);
-    this.router.get('/', GetTodo.prototype.readAll);
-    this.router.get('/:id', GetTodo.prototype.readById);
-    this.router.put('/:id', UpdateTodo.prototype.update);
-    this.router.delete('/:id', DeleteTodo.prototype.delete);
-
-    return this.router;
-  }
 }
+###
+GET {{baseUrl}}/{{urlPath}}/getTask/:title
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
 
-export const taskRoutes: TaskRoutes = new TaskRoutes();
+###
+DELETE {{baseUrl}}/{{urlPath}}/deleteTask/:title
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+UPDATE {{baseUrl}}/{{urlPath}}/deleteTask/:title
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
