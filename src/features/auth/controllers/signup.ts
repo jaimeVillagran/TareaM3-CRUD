@@ -12,6 +12,7 @@ import { IUserDocument } from '@user/interfaces/IUserDocument.interface';
 import { userService } from '@services/db/user.service';
 
 
+
 export class SignUp extends SignUpUtility {
     @joiValidation(signupSchema)
     public async create(req: Request, res: Response): Promise<void> {
