@@ -3,6 +3,7 @@
 import { Response } from "express";
 import { AuthPayload } from "@auth/interfaces/IAuthPayload.interface";
 import { IAuthDocument } from "@auth/interfaces/IAuthDocument.interface";
+import { ResponseError } from "@sendgrid/mail";
 
 //MOCK1: REQUEST
 export const authMockRequest = (sessionData: IJWT, body: IAuthMock, currentUser?: AuthPayload | null, params?: unknown) => ({
@@ -14,10 +15,11 @@ export const authMockRequest = (sessionData: IJWT, body: IAuthMock, currentUser?
 });
 
 //MOCK2 : RESPONSE
-export const authMockResponse = () => {
+export const authMockResponse = (): Response => {
     const res: Response = {} as Response;
     res.status = jest.fn().mockReturnValue(res);
     res.json = jest.fn().mockReturnValue(res);
+    return res;
 }
 
 //INTERFACES

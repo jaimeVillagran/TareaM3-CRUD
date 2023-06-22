@@ -28,16 +28,14 @@ describe('Signup', () => {
                 avatarColor: 'red'
 
             }
-        )as Request;
+        ) as Request;
         const res: Response = authMockResponse();
 
 
         //WHEN
-        SignUp.prototype.create(req, res).catch((error: CustomError)=>{
+        SignUp.prototype.create(req, res).catch((error: CustomError) => {
 
-
-
-        //THEN
+            //THEN STEP: ASSERT
             expect(error.statusCode).toEqual(400);
             expect(error.serializeErrors().message).toEqual('Username is a required field.');
         });
