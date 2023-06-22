@@ -1,4 +1,4 @@
 export interface INotificationsSettings {
-    massages: boolean;
+    messages: boolean;
     comments: boolean
 }

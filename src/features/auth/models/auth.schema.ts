@@ -1,7 +1,6 @@
 import { hash, compare } from 'bcryptjs';
 import { IAuthDocument } from '@auth/interfaces/IAuthDocument.interface';
 import { model, Model, Schema } from 'mongoose';
-import { config } from '@configs/configEnvs';
 
 // Design Pattern AAA (Authorization, Authentication, auditory) / security by design (SbD)
 const authSchema: Schema = new Schema({
