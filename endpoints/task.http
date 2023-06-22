@@ -5,15 +5,14 @@
 ###
 POST {{baseUrl}}/{{urlPath}}/createTask
 Content-Type: application/json
-Accept: application/json
+Accept: application/json,
 withCredentials: true
-{
-    "title":"Tarea1",
-    "description":"Descripcion 1",
-    "dueDate":"2023-05-18T14:0",
-    "completed": false
-
+ {
+  "title": "Tarea1",
+  "description": "Descripción 1",
+  "completed": false
 }
+
 ###
 GET {{baseUrl}}/{{urlPath}}/getTask/:title
 Content-Type: application/json

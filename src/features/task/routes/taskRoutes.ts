@@ -1,5 +1,7 @@
 import express, {Router} from 'express';
-import { TaskController} from '@task/controllers/taskController';
+import { TaskController } from '@task/controllers/taskController';
+
+
 
 
 class TaskRoutes{

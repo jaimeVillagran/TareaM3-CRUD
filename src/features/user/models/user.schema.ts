@@ -1,10 +1,10 @@
 import { IUserDocument } from '@root/features/user/interfaces/IUserDocument.interface';
 
-import mongoose, { model, Model, Schema } from 'mongoose';
+import { model, Model, Schema } from 'mongoose';
 
 const userSchema: Schema = new Schema({
     //Llevamos los elementos sensibles al Auth
-    authId: { type: mongoose.Schema.Types.ObjectId, ref:'Auth'},
+    authId: { type: Schema.Types.ObjectId, ref:'Auth'},
     username: { type: String, default: '' },
     email: { type: String, default: '' },
     password: { type: String, default: '' },
