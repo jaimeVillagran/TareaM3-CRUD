@@ -106,4 +106,3 @@ export class TaskController {
 
 }
 
-export const taskController = new TaskController();
