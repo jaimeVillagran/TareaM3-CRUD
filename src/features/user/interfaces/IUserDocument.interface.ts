@@ -4,14 +4,10 @@ import { INotificationsSettings } from './INotificationsSettings';
 export interface IUserDocument extends Document {
     _id: string | ObjectId;
     authId: string | ObjectId;
-    username?: string;
-    email?: string;
-    password?: string;
-    avatarColor: string
+    tasks: mongoose.Types.ObjectId[];
     notifications: INotificationsSettings;
-    createdAt: Date;
-    passwordResetToken?: string;
-    passwordResetExpires?: number | string;
+
 }
+
 
 

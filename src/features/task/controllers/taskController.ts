@@ -23,10 +23,10 @@ export class TaskController {
 
       // Crear la tarea asociada al usuario
       const newTask = await taskService.createTask({
-        // Asignar el ID del usuario a la tarea
-        title,
-        description,
-        completed
+        userId,
+        title: title,
+        description:description,
+        completed:completed
       });
 
       res.status(HTTP_STATUS.CREATED).json({ message: 'Task created', task: newTask });

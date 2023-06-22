@@ -24,7 +24,6 @@ class UserService {
             email: '$authId.email',
             avatarColor: '$authId.avatarColor',
             createdAt: '$authId.createdAt',
-            notifications: 1,
 
         };
     }

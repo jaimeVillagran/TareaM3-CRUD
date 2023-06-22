@@ -1,8 +1,9 @@
-import { Document, ObjectId, Schema} from 'mongoose';
+import mongoose, { Document } from 'mongoose';
+import { ObjectId } from 'mongodb';
 
-export interface ITaskDocument extends Document{
+export interface ITaskDocument extends Document {
     _id: string | ObjectId;
-    authId: string | Schema.Types.ObjectId;
+    authId: mongoose.Types.ObjectId;
     title: string;
     description: string;
     completed: boolean;
