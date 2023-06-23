@@ -8,7 +8,7 @@ Content-Type: application/json
 Accept: application/json,
 withCredentials: true
 {
-  "authId":"6495119d7f005fec5fe94d9f",
+
   "title": "Tarea1",
   "description": "Descripción 1",
   "completed": false

@@ -13,8 +13,8 @@
      "sourceType": "module"
   },
   "rules": {
-     "semi": ["error", 2],
-     "indent":[2,"always" ],
+     "semi": ["2", "always"],
+     "indent":["error","always" ],
      "quotes": ["error", "single"],
      "space-before-function-paren": [0, { "anonymous": "always", "named": "always" }],
      "@typescript-eslint/no-non-null-assertion": "off",

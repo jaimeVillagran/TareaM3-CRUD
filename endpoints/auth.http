@@ -47,7 +47,7 @@ withCredentials: true
 ###
 POST {{baseUrl}}/{{urlPath}}/createTask
 Content-Type: application/json
-Accept: application/json,
+Accept: application/json
 withCredentials: true
 {
   "title": "Tarea1",
