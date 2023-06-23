@@ -10,10 +10,10 @@ Accept: application/json
 withCredentials: true
 
 {
-  "username": "jaime",
-  "password": "jaimev",
-  "email": "jaime@gmail.com",
-  "avatarColor": "blue"
+  "username": "Usuario",
+  "password": "12345",
+  "email": "usuario@gmail.com",
+  "avatarColor": "green"
 }
 
 //contiene las solicitudes de inicio de session
@@ -24,8 +24,8 @@ Accept: application/json
 withCredentials: true
 
 {
-  "username": "gabriel",
-  "password": "gabdev"
+  "username": "Usuario",
+  "password": "12345"
 }
 
 
@@ -44,3 +44,13 @@ Accept: application/json
 withCredentials: true
 
 
+###
+POST {{baseUrl}}/{{urlPath}}/createTask
+Content-Type: application/json
+Accept: application/json,
+withCredentials: true
+{
+  "title": "Tarea1",
+  "description": "Descripción 1",
+  "completed": false
+}
