@@ -23,8 +23,7 @@ class UserService {
             username: '$authId.username',
             email: '$authId.email',
             avatarColor: '$authId.avatarColor',
-            createdAt: '$authId.createdAt',
-
+            createdAt: '$authId.createdAt'
         };
     }
 }

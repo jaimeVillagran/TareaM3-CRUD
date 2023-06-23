@@ -1,4 +1,4 @@
 export interface INotificationsSettings {
-    messages: boolean;
-    comments: boolean
+  messages: boolean;
+  comments: boolean;
 }

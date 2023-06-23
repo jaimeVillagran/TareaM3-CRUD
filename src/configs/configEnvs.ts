@@ -15,7 +15,6 @@ class Config {
   public BASE_PATH: string | undefined;
   public RANDOM_BYTES: string | undefined;
 
-
   constructor() {
     this.DATABASE_URL = process.env.DATABASE_URL;
     this.NODE_ENV = process.env.NODE_ENV;
@@ -25,8 +24,8 @@ class Config {
     this.SECRET_KEY_TWO = process.env.SECRET_KEY_TWO;
     this.SERVER_PORT = process.env.SERVER_PORT;
     this.SALT_ROUND = process.env.SALT_ROUND;
-    this.BASE_PATH=process.env.BASE_PATH;
-    this.RANDOM_BYTES=process.env.RANDOM_BYTES;
+    this.BASE_PATH = process.env.BASE_PATH;
+    this.RANDOM_BYTES = process.env.RANDOM_BYTES;
   }
 
   public createLogger(name: string): bunyan {

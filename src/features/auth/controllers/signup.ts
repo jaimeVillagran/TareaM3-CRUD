@@ -11,39 +11,34 @@ import { SignUpUtility } from './utilities/signup.utility';
 import { IUserDocument } from '@user/interfaces/IUserDocument.interface';
 import { userService } from '@services/db/user.service';
 
-
-
 export class SignUp extends SignUpUtility {
-    @joiValidation(signupSchema)
-    public async create(req: Request, res: Response): Promise<void> {
-        const { username, email, password, avatarColor } = req.body;
-        const checkIfUserExist = await authService.getUserByUsernameOrEmail(username, email);
-        if (checkIfUserExist) {
-            throw new BadRequestError('Invalid credentials for this user');
-        }
-
-        const authObjectId: ObjectId = new ObjectId();
-        const userObjectId: ObjectId = new ObjectId();
-
-        const passwordHash = await Generators.hash(password);
-        const authData: IAuthDocument = SignUp.prototype.signUpData({
-            _id: authObjectId,
-            username,
-            email,
-            password: passwordHash,
-            avatarColor
-        });
-
-
-        const userJwt: string = SignUp.prototype.signToken(authData, userObjectId);
-        req.session = { jwt: userJwt };
-
-        const user: IUserDocument = SignUp.prototype.userData(authData, userObjectId);
-        await userService.addUserData(user);
-        await authService.createAuthUser(authData);
-
-        res
-            .status(HTTP_STATUS.CREATED)
-            .json({ message: 'User created successfully', user: user, token: userJwt });
+  @joiValidation(signupSchema)
+  public async create(req: Request, res: Response): Promise<void> {
+    const { username, email, password, avatarColor } = req.body;
+    const checkIfUserExist = await authService.getUserByUsernameOrEmail(username, email);
+    if (checkIfUserExist) {
+      throw new BadRequestError('Invalid credentials for this user');
     }
+
+    const authObjectId: ObjectId = new ObjectId();
+    const userObjectId: ObjectId = new ObjectId();
+
+    const passwordHash = await Generators.hash(password);
+    const authData: IAuthDocument = SignUp.prototype.signUpData({
+      _id: authObjectId,
+      username,
+      email,
+      password: passwordHash,
+      avatarColor
+    });
+
+    const userJwt: string = SignUp.prototype.signToken(authData, userObjectId);
+    req.session = { jwt: userJwt };
+
+    const user: IUserDocument = SignUp.prototype.userData(authData, userObjectId);
+    await userService.addUserData(user);
+    await authService.createAuthUser(authData);
+
+    res.status(HTTP_STATUS.CREATED).json({ message: 'User created successfully', user: user, token: userJwt });
+  }
 }

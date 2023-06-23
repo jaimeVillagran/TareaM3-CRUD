@@ -24,7 +24,7 @@ export class ToDoServer {
   }
 
   //Comportamientos y definiciones propias del server, inyecciones.
-//Patron de diseño Chain of Responsability
+  //Patron de diseño Chain of Responsability
   public start(): void {
     this.securityMIddleware(this.app);
     this.standardWiddleware(this.app);
@@ -80,7 +80,6 @@ export class ToDoServer {
       const httpServer: http.Server = new http.Server(app);
 
       this.startHttpServer(httpServer);
-
     } catch (error) {
       log.error(error);
     }
@@ -92,11 +91,8 @@ export class ToDoServer {
       log.info(`Server running at ${config.SERVER_PORT}.`);
     });
   }
-//Manejo de rutas
-  private routesMiddleware(app: Application): void{
+  //Manejo de rutas
+  private routesMiddleware(app: Application): void {
     ApplicationRoutes(app);
   }
-
-
-
 }
