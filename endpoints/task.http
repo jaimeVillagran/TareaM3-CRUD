@@ -15,7 +15,7 @@ withCredentials: true
 }
 
 ###
-GET {{baseUrl}}/{{urlPath}}/getTask/:title
+GET {{baseUrl}}/{{urlPath}}/getTask/:Tarea1
 Content-Type: application/json
 Accept: application/json
 withCredentials: true

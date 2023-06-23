@@ -11,6 +11,8 @@ import { taskValidator } from '@task/schemes/taskSchemes';
 import { ITaskDocument } from '@task/interfaces/ITaskDocument';
 import { TaskUtility } from './utilities/task.utility';
 import { ITaskData } from '../interfaces/ITaskData';
+import { IUserDocument } from '@user/interfaces/IUserDocument.interface';
+import { ITaskCreated } from '@task/interfaces/ITaskCreated';
 
 export class TaskController extends TaskUtility {
     @joiValidation(taskValidator)
@@ -34,7 +36,8 @@ export class TaskController extends TaskUtility {
                 description,
                 completed
             });
-            const taskCreated = await taskService.createTask(newTask);
+            await taskService.createTask(newTask);
+            const taskCreated : ITaskCreated = TaskController.prototype.taskCreated(newTask);
 
             res.status(HTTP_STATUS.CREATED).json({ message: 'Task created', task: taskCreated});
         } catch (error) {
