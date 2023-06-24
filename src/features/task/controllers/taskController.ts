@@ -37,7 +37,7 @@ export class TaskController extends TaskUtility {
                 completed
             });
             await taskService.createTask(newTask);
-            const taskCreated : ITaskCreated = TaskController.prototype.taskCreated(newTask);
+            const taskCreated : ITaskCreated = TaskController.prototype.taskCreated(newTask, user);
 
             res.status(HTTP_STATUS.CREATED).json({ message: 'Task created', task: taskCreated});
         } catch (error) {

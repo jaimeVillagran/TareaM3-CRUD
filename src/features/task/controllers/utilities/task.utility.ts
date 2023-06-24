@@ -17,10 +17,11 @@ export abstract class TaskUtility {
             createdAt: new Date()
         } as unknown as ITaskDocument;
     }
-    protected taskCreated(data: ITaskDocument): ITaskCreated {
-        const {_id, title, description,completed }= data;
+    protected taskCreated(data: ITaskDocument, username: IAuthDocument): ITaskCreated {
+        const {_id, title, description, completed }= data;
         return {
             _id,
+            username: username.username,
             title,
             description,
             completed,

@@ -9,8 +9,8 @@ Accept: application/json
 withCredentials: true
 
 {
-  "title": "Tarea1",
-  "description": "Descripción 1",
+  "title": "Tarea3",
+  "description": "Descripción 3 podria ser super mas larga porque aguanta.",
   "completed": false
 }
 
@@ -27,7 +27,7 @@ Accept: application/json
 withCredentials: true
 
 ###
-UPDATE {{baseUrl}}/{{urlPath}}/deleteTask/:title
+PUT  {{baseUrl}}/{{urlPath}}/deleteTask/:title
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
