@@ -5,6 +5,7 @@ import { ITaskCreated } from '@task/interfaces/ITaskCreated';
 import { IUserDocument } from '@user/interfaces/IUserDocument.interface';
 import { IAuthDocument } from '@auth/interfaces/IAuthDocument.interface';
 import { ObjectId } from 'mongodb';
+
 export abstract class TaskUtility {
     protected taskData(data: ITaskData): ITaskDocument {
         const { _id, authId, title, description, completed } = data;
