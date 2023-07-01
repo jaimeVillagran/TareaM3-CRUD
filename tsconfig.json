@@ -1,28 +1,28 @@
 {
     "compilerOptions": {
-        "module": "CommonJS" /* esto es para definir que nuestro código compilado luego pasará a JS */,
+        "module": "CommonJS",
         "lib": ["DOM", "ES2015"],
-        "esModuleInterop": true /* esto es para asegurarnos de darle soporte a nuestro JS de acuerdo al TS compilado */,
-        "resolveJsonModule": true /* nos permite intepretar importaciones de archivos .json */,
-        "moduleResolution": "node" /* esto nos permite verificar la inclusión de TS de forma explícita en node */,
-        "target": "ES2015" /* aquí defines tu estandarización del ECMMA */,
-        "noImplicitAny": true /* esto me permite que no me de recomendaciones de tipos any */,
-        "sourceMap": true /* esto me permite habilitar un archivo fuente de js donde vaya a caer todo el código final */,
-        "experimentalDecorators": true /* esto me permite darle soporte a decoradores */,
-        "emitDecoratorMetadata": true /* esto me permite que la definición de los decoradores persistan en tiempo de ejecución */,
-        "strict": true /* te permite habilitar el modo estricto para que te de sugerencias/recomendaciones de código en base al ECMMA */,
-        "baseUrl": "./" /* te permite definir el path donde se creará tu carpeta de distribución con el código final */,
-        "outDir": "./build" /* te permite darle el nombre a la carpeta de distribución */,
-        "forceConsistentCasingInFileNames": true,/*Persistencia del uso de Case*/
-        "allowSyntheticDefaultImports": true,/*Soporte de exportaciones sin nombre, para evitar problemas*/
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+        "target": "ES2015",
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "strict": true,
+        "baseUrl": "./",
+        "outDir": "./build",
+        "forceConsistentCasingInFileNames": true,
+        "allowSyntheticDefaultImports": true,
         "pretty": true,
         "noUnusedLocals": false,
         "noUnusedParameters": false,
-        "plugins": [//plugins para transformacion de alias paths
-            { "transform": "typescript-transform-paths" },//conexion con el transformador
-            { "transform": "typescript-transform-paths", "afterDeclarations": true }//Establece que su definicion persista luego de la compilación
+        "plugins": [
+            { "transform": "typescript-transform-paths" },
+            { "transform": "typescript-transform-paths", "afterDeclarations": true }
         ],
-        "paths": {//configuración de Alias Paths
+        "paths": {
             "@bootstrap/*": ["src/bootstrap/*"],
             "@configs/*": ["src/configs/*"],
             "@auth/*": ["src/features/auth/*"],
@@ -35,8 +35,8 @@
             "@root/*": ["src/*"]
         }
     },
-    "exclude": ["node_modules"] /* te permite excluir del proceso de compilación el node_modules */,
+    "exclude": ["node_modules"],
     "include": [
         "src/**/*.ts"
-    ] /* te permite incluir en el proceso de compilación tu directorio de trabajo donde tienes tus .ts */
+    ]
 }
