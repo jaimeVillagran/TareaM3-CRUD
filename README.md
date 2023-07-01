@@ -49,7 +49,7 @@ We developed a ToDo app, following the requeriments given by Miguel Chamorro, ou
 </table>
 
 
-*Pending for next version.
+<p align="right">*Pending for next version.</p>
 
 You can register an user, save your tasks and check when they are completed.
 
