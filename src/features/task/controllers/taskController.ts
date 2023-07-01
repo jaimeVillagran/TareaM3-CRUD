@@ -11,6 +11,7 @@ import { taskValidator } from '@task/schemes/taskSchemes';
 import { ITaskDocument } from '@task/interfaces/ITaskDocument';
 import { TaskUtility } from './utilities/task.utility';
 
+//Solid Principle Open/Closed: Entities should be open for extension but closed for modification.
 export class TaskController extends TaskUtility {
   @joiValidation(taskValidator)
   public async createTask(req: Request, res: Response): Promise<void> {

@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { userService } from '@services/db/user.service';
+import { IUserDocument } from '@user/interfaces/IUserDocument.interface';
 import HTTP_STATUS from 'http-status-codes';
 
 export class CurrentUser {
@@ -8,7 +9,8 @@ export class CurrentUser {
     let isUser = false;
     let token = null;
     let user = null;
-    const existingUser = await userService.getUserByName(`${req.currentUser!.username}`);
+    const existingUser = await userService.getUserById(`${req.currentUser!.userId}`) as IUserDocument;
+    console.log('User:',existingUser);
     if (existingUser) {
       console.log('User Existe.');
       isUser = true;
