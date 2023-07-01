@@ -1,4 +1,4 @@
-import { hash, compare } from 'bcryptjs';
+import { compare } from 'bcryptjs';
 import { IAuthDocument } from '@auth/interfaces/IAuthDocument.interface';
 import { model, Model, Schema } from 'mongoose';
 
@@ -13,7 +13,6 @@ const authSchema: Schema = new Schema(
   },
   {
     toJSON: {
-      //Cuando reconozca un JSON va a borrar la pass de la info retornada
       transform: (_doc, ret) => {
         delete ret.password;
         return ret;

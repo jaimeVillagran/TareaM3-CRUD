@@ -1,4 +1,4 @@
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 import Logger from 'bunyan';
 import { config } from '@configs/configEnvs';
 import { logger } from '@configs/configLogs';

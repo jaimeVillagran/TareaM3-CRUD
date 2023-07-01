@@ -42,11 +42,8 @@ export abstract class SignUpUtility {
       avatarColor,
       notifications: {
         messages: true,
-        comments: true,
-
-      },
-
-
+        comments: true
+      }
     } as unknown as IUserDocument;
   }
 }
