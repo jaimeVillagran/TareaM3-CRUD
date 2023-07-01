@@ -22,7 +22,6 @@ const authSchema: Schema = new Schema(
 );
 
 //Virtual methods / space methods .
-
 authSchema.methods.comparePassword = async function (password: string): Promise<boolean> {
   const hashedPassword: string = (this as IAuthDocument).password!;
   return compare(password, hashedPassword);
