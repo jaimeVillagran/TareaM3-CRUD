@@ -11,5 +11,5 @@ export interface AuthPayload {
   userId: string;
   email: string;
   username: string;
-  iat?: number; //expiration time token
+  iat?: number;
 }

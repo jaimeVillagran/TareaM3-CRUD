@@ -2,6 +2,7 @@ import express, { Router } from 'express';
 import { TaskController } from '@task/controllers/taskController';
 import { authMiddleware } from '@helpers/middlewares/auth-middleware';
 
+//SOLID: Principio de Inversión de Dependencias (DIP)
 class TaskRoutes {
   private router: Router;
 

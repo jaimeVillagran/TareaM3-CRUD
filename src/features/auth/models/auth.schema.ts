@@ -13,7 +13,6 @@ const authSchema: Schema = new Schema(
   },
   {
     toJSON: {
-      //Cuando reconozca un JSON va a borrar la pass de la info retornada
       transform: (_doc, ret) => {
         delete ret.password;
         return ret;
@@ -23,7 +22,6 @@ const authSchema: Schema = new Schema(
 );
 
 //Virtual methods / space methods .
-
 authSchema.methods.comparePassword = async function (password: string): Promise<boolean> {
   const hashedPassword: string = (this as IAuthDocument).password!;
   return compare(password, hashedPassword);

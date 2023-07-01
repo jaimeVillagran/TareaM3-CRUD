@@ -1,15 +1,6 @@
-import { taskCreatedMock, taskDataMock, taskMockRequest } from '@root/mocks/task.mock';
+import { taskMockRequest } from '@root/mocks/task.mock';
 import { TaskService } from '@services/db/task.service';
-import {
-  PASSWORD,
-  USERNAME,
-  authMockRequest,
-  authMockResponse,
-  authUserPayload,
-  JWT,
-  userMock,
-  IJWT
-} from '@root/mocks/auth.mock';
+import { authMockResponse, authUserPayload, JWT, userMock, IJWT } from '@root/mocks/auth.mock';
 import { Request, Response } from 'express';
 import { TaskController } from '../taskController';
 import { authService } from '@services/db/auth.service';
@@ -28,6 +19,7 @@ describe('Task Creation', () => {
     jest.clearAllTimers();
   });
 
+  //Design Patern: GWT
   it('Should create a new task', async () => {
     // GIVEN STEP
     const req: Request = taskMockRequest(

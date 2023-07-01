@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { ObjectId } from 'mongodb';
 import { taskService } from '@services/db/task.service';
-import { userService } from '@services/db/user.service';
 import { authService } from '@services/db/auth.service';
 import HTTP_STATUS from 'http-status-codes';
 import { BadRequestError } from '@helpers/errors/badRequestError';
@@ -12,6 +11,7 @@ import { ITaskDocument } from '@task/interfaces/ITaskDocument';
 import { TaskUtility } from './utilities/task.utility';
 
 //Solid Principle Open/Closed: Entities should be open for extension but closed for modification.
+//Single Responsibility Principle (SRP)
 export class TaskController extends TaskUtility {
   @joiValidation(taskValidator)
   public async createTask(req: Request, res: Response): Promise<void> {
