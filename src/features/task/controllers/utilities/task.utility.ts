@@ -25,7 +25,7 @@ export abstract class TaskUtility {
             username: username.username,
             title,
             description,
-            completed,
+            completed
 
         } as unknown as ITaskCreated;
     }

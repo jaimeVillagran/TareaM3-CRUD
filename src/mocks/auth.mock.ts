@@ -3,6 +3,7 @@
 import { Response } from 'express';
 import { AuthPayload } from '@auth/interfaces/IAuthPayload.interface';
 import { IAuthDocument } from '@auth/interfaces/IAuthDocument.interface';
+import { IUserDocument } from '@user/interfaces/IUserDocument.interface';
 
 
 //MOCK1: REQUEST
@@ -41,19 +42,15 @@ export interface IAuthMock {
 
 //MOCK VALUES
 export const authUserPayload = {
-    userId: '60263f14648fed5246e322d3',
+    userId : '123',
     username: 'gabriel',
-    email: 'gab.dev@gmail.com',
-    iat: 12345
+    email: 'gabriel@gmail.com'
 };
 
 export const userMock = {
-    id: '60263f14648fed5246e322d3',
-    username: 'gabriel',
-    email: 'gab.dev@gmail.com',
-    password: '12345',
-    avatarColor: 'black',
-    createdAt: new Date()
+    email:'gabriel@gmail.com',
+    userId:'123',
+    username:'gabriel'
 } as unknown as IAuthDocument;
 
 export const PASSWORD = '12345';

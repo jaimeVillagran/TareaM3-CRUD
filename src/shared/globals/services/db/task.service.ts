@@ -1,12 +1,13 @@
 import { ITaskDocument } from '@task/interfaces/ITaskDocument';
 import { TaskModel } from '@task/models/task.schema';
 
-class TaskService {
+export class TaskService {
   public async getAllTasks(): Promise<ITaskDocument[]> {
     return TaskModel.find().exec();
   }
-  public async createTask(data: ITaskDocument): Promise<void> {
-    await TaskModel.create(data);
+  public async createTask(data: ITaskDocument): Promise<ITaskDocument> {
+    const task: ITaskDocument = await TaskModel.create(data);
+    return task;
   }
 
   public async getTaskByTitle(title: string): Promise<ITaskDocument> {

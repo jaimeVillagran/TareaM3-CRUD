@@ -9,13 +9,13 @@ Accept: application/json
 withCredentials: true
 
 {
-  "title": "Tarea3",
-  "description": "Descripción 3 podria ser súper mas larga porque aguanta.",
+  "title": "Tarea6",
+  "description": "Descripción 5 podria ser súper mas larga porque aguanta.",
   "completed": false
 }
 
 ###
-GET {{baseUrl}}/{{urlPath}}/getTask/:Tarea1
+GET {{baseUrl}}/{{urlPath}}/getTask/:Tarea6
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
