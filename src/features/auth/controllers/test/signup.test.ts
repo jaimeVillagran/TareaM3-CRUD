@@ -1,14 +1,13 @@
-import {  authMockRequest, authMockResponse } from '@root/mocks/auth.mock';
+import { authMockRequest, authMockResponse } from '@root/mocks/auth.mock';
 import { Request, Response } from 'express';
 import { SignUp } from '../signup';
 import { CustomError } from '@helpers/errors/customError';
-//observable que controla los procesos y tiempos de ejecución.
+
 jest.useFakeTimers();
-jest.mock;
 
 describe('Signup', () => {
   beforeEach(() => {
-    jest.resetAllMocks(); //Resetear los mocks, para evitar que se mezclen datos y sean reutilizables.
+    jest.resetAllMocks();
   });
 
   afterEach(() => {
