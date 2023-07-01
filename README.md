@@ -1,7 +1,7 @@
 <h1>ToDo App</h1>
 This is our backend project .v1 for Bootcamp MERN last challenge.
 We developed a ToDo app, following the requeriments given by Miguel Chamorro, our teacher:
-
+</br>
 1) Project architecture based on clean Onion architecture and necessary directories for the completion of the challenge with proper organization.
 2) Creation of 3 MongoDB database models (Auth, User, Task).
 3) Creation of parent and child routes using HTTP and middleware usage.
