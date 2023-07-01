@@ -40,29 +40,9 @@ export abstract class SignUpUtility {
       email,
       password,
       avatarColor,
-      profilePicture: '',
-      blocked: [],
-      blockedBy: [],
-      work: '',
-      location: '',
-      school: '',
-      quote: '',
-      bgImageVersion: '',
-      bgImageId: '',
-      followersCount: 0,
-      followingCount: 0,
-      postsCount: 0,
       notifications: {
         messages: true,
-        reactions: true,
-        comments: true,
-        follows: true
-      },
-      social: {
-        facebook: '',
-        instagram: '',
-        twitter: '',
-        youtube: ''
+        comments: true
       }
     } as unknown as IUserDocument;
   }

@@ -8,10 +8,8 @@ import { Generators } from '@helpers/generators/generators';
 import { IAuthDocument } from '@auth/interfaces/IAuthDocument.interface';
 import HTTP_STATUS from 'http-status-codes';
 import { SignUpUtility } from './utilities/signup.utility';
-
-
-
-
+import { IUserDocument } from '@user/interfaces/IUserDocument.interface';
+import { userService } from '@services/db/user.service';
 
 export class SignUp extends SignUpUtility {
   @joiValidation(signupSchema)
@@ -37,8 +35,10 @@ export class SignUp extends SignUpUtility {
     const userJwt: string = SignUp.prototype.signToken(authData, userObjectId);
     req.session = { jwt: userJwt };
 
-    res
-      .status(HTTP_STATUS.CREATED)
-      .json({ message: 'User created successfully', user:  userObjectId, token: userJwt });
+    const user: IUserDocument = SignUp.prototype.userData(authData, userObjectId);
+    await userService.addUserData(user);
+    await authService.createAuthUser(authData);
+
+    res.status(HTTP_STATUS.CREATED).json({ message: 'User created successfully', user: user, token: userJwt });
   }
 }

@@ -18,7 +18,7 @@ const passwordSchema: ObjectSchema = Joi.object().keys({
   confirmPassword: Joi.string().required().valid(Joi.ref('password')).messages({
     'any.only': 'Passwords should match',
     'any.required': 'Confirm password is a required field'
-  }),
+  })
 });
 
 export { emailSchema, passwordSchema };
