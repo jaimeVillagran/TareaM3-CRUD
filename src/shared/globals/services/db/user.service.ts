@@ -13,8 +13,8 @@ class UserService {
     await UserModel.updateOne({ username }, { $push: { tasks: task } });
   }
 
-  public async getUserByName(username: string): Promise<IUserDocument | null>{
-    return UserModel.findOne({username});
+  public async getUserByName(username: string): Promise<IUserDocument | null> {
+    return UserModel.findOne({ username });
   }
 
   public async getUserById(userId: string): Promise<IUserDocument> {

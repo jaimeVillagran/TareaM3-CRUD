@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { IUserDocument } from '@user/interfaces/IUserDocument.interface';
 import { userService } from '@services/db/user.service';
 import HTTP_STATUS from 'http-status-codes';
 

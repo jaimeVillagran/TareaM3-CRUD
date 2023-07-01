@@ -14,8 +14,7 @@ export default (app: Application) => {
     app.use(config.BASE_PATH!, authRoutes.signoutRoute());
     app.use(config.BASE_PATH!, authMiddleware.verifyUser, taskRoutes.routes());
     app.use(config.BASE_PATH!, authMiddleware.verifyUser, currentUserRoutes.routes());
-
-};
+  };
 
   routes();
 };

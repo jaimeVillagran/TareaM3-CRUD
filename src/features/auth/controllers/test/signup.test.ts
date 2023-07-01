@@ -1,4 +1,4 @@
-import {  authMockRequest, authMockResponse } from '@root/mocks/auth.mock';
+import { authMockRequest, authMockResponse } from '@root/mocks/auth.mock';
 import { Request, Response } from 'express';
 import { SignUp } from '../signup';
 import { CustomError } from '@helpers/errors/customError';

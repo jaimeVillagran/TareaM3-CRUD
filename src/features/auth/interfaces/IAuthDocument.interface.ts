@@ -9,5 +9,4 @@ export interface IAuthDocument extends Document {
   avatarColor: string;
   createdAt: Date;
   comparePassword(password: string): Promise<boolean>;
-
 }
