@@ -14,6 +14,7 @@ We developed a ToDo app, following the requeriments given by Miguel Chamorro, ou
 8) Security through cookies and tokens.
 9) SOLID principles, design patterns, and declarative code through abstractions.
 10) 1 unit test and 1 integration test related to CRUD operations using Jest.
+11) Collaborative work, using git and different branches for organized and phased development.
 
 
 
