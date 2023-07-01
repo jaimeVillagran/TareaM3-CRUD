@@ -1,7 +1,7 @@
-<h1>ToDo App</h1>
+<h1 align="center">ToDo App</h1>
 This is our backend project .v1 for Bootcamp MERN last challenge.
 
-<h2>Tecnical Descriptions</h2>
+<h2 align="center">Tecnical Descriptions</h2>
 We developed a ToDo app, following the requeriments given by Miguel Chamorro, our teacher:
 
 1) Project architecture based on clean Onion architecture and necessary directories for the completion of the challenge with proper organization.
@@ -17,8 +17,8 @@ We developed a ToDo app, following the requeriments given by Miguel Chamorro, ou
 
 
 
-<h3>This app contains the next functions:</h3>
-<table>
+<h3 align="center">This app contains the next functions:</h3>
+<table align="center">
   <tr>
     <td>Create an User with authentication</td>
   </tr>
