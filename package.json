@@ -1,7 +1,7 @@
 {
   "name": "to-do-app",
   "version": "1.0.0",
-  "description": "Final proyect bootcamp MERN. To Do APP CRUD",
+  "description": "Proyect Full Stack MERN. To Do APP CRUD",
   "main": "app.ts",
   "scripts": {
     "dev": "nodemon -r tsconfig-paths/register src/app.ts | ./node_modules/.bin/bunyan",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/GabrielRecabarren/TareaM3-CRUD.git"
   },
-  "author": "GabrielAmaru",
+  "author": "GabrielAmaru and Jaime Villagran",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GabrielRecabarren/TareaM3-CRUD/issues"
