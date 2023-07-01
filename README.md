@@ -1,5 +1,5 @@
 <h1>ToDo App</h1>
-This is our backend project .v1 for Bootcamp MERN las challenge.
+This is our backend project .v1 for Bootcamp MERN last challenge.
 We developed a ToDo app, following the requeriments given by Miguel Chamorro, our teacher.
 
 1) Project architecture based on clean Onion architecture and necessary directories for the completion of the challenge with proper organization.
