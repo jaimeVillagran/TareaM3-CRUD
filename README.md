@@ -16,15 +16,36 @@ We developed a ToDo app, following the requeriments given by Miguel Chamorro, ou
 
 
 <h3>This app contains the next functions:</h3>
--Create an User with authentication
--User Login
--Add a task with a decription
--Delete a task
--Update a task
--Get a task
--Get all tasks
--Get all tasks by date *
--Get all tasks by status*
+<table>
+  <tr>
+    <td>Create an User with authentication</td>
+  </tr>
+  <tr>
+    <td>User Login</td>
+  </tr>
+  <tr>
+    <td>Add a task with a description</td>
+  </tr>
+  <tr>
+    <td>Delete a task</td>
+  </tr>
+  <tr>
+    <td>Update a task</td>
+  </tr>
+  <tr>
+    <td>Get a task</td>
+  </tr>
+  <tr>
+    <td>Get all tasks</td>
+  </tr>
+  <tr>
+    <td>Get all tasks by date *</td>
+  </tr>
+  <tr>
+    <td>Get all tasks by status *</td>
+  </tr>
+</table>
+
 
 *Pending for next version.
 
