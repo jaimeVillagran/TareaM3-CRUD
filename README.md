@@ -56,6 +56,6 @@ You can register an user, save your tasks and check when they are completed.
 Thank you very much to our beloved teacher, Miguel Chamorro, for his constant dedication to sharing knowledge and for supporting our inquiries. We eagerly look forward to meeting again, not as students, but as colleagues in the workplace.
 We will continue developing our skills and striving to apply both the technical and human aspects that we have been learning.
 
-<h4>console.log("Thank you, world")</h4>
+<h4>console.log("Thank you, world")🪬</h4>
 
 
